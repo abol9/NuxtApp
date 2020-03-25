@@ -1,0 +1,9 @@
+html,
+body {
+  margin: 0;
+  font-family: Irs, Iry;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
