@@ -18,6 +18,10 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
+  loadingIndicator: {
+    name:'circle',
+    color:'#111'
+  },
   /*
   ** Build configuration
   */
@@ -51,7 +55,25 @@ module.exports = {
     "~/assets/css/main.css"
   ],
   plugins: [
-    // "./node_modules/bootstrap-v4-rtl/dist/js/bootstrap.bundle.min.js"
-  ]
+    '~plugins/core-components.js'
+  ],
+  modules: [ '@nuxtjs/axios'],
+  buildModules: [
+    '@nuxtjs/vuetify'
+  ],
+  vuetify: {
+    /* module options */
+    rtl:true
+  },
+  env:{
+    title:'Salam'
+  },
+  transition:{
+    name:'fade',
+    mode:'out-in'
+  },
+  axios: {
+    baseURL: 'http://localhost:8000/api',
+  },
 }
 

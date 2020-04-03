@@ -7,23 +7,26 @@
 <script>
 import HomeMenu from "~/components/HomeMenu";
 export default {
+  middleware:['auth'],
+  created(){
+  },
   components: {
     HomeMenu
   },
   data() {
     return {
-      items: [
-        { id: 1, title: "خانه", url: "/" },
-        { id: 2, title: "نوشته ها", url: "/posts" },
-        { id: 3, title: "درباره ما", url: "/about" },
-        { id: 4, title: "کاربران", url: "/users" }
-      ]
+      items:[]
     };
   },
   methods: {
     show: function() {
       console.log("Click Menu");
     }
+  },
+  asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
+      return {
+        items : store.state.items
+      }
   }
 };
 </script>

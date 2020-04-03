@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <nuxt />
+    <nuxt class="blog" />
   </div>
 </template>
 <script>
@@ -12,3 +12,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+.blog {
+  margin-top: 100px;
+}
+</style>
